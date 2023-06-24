@@ -1,7 +1,11 @@
 import "./UserInput.css";
 
 const UserInput = () => {
-  const submitHandler = () => {};
+  const resetHandler = () => {};
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+  };
   return (
     <form onSubmit={submitHandler} className="form">
       <div className="input-group">
@@ -27,7 +31,7 @@ const UserInput = () => {
         </p>
       </div>
       <p className="actions">
-        <button type="reset" className="buttonAlt">
+        <button onClick={resetHandler} type="reset" className="buttonAlt">
           Reset
         </button>
         <button type="submit" className="button">
