@@ -1,8 +1,9 @@
 import "./UserInput.css";
 
 const UserInput = () => {
+  const submitHandler = () => {};
   return (
-    <form className="form">
+    <form onSubmit={submitHandler} className="form">
       <div className="input-group">
         <p>
           <label htmlFor="current-savings">Current Savings ($)</label>
