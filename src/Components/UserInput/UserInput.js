@@ -1,13 +1,27 @@
+import { useState } from "react";
 import "./UserInput.css";
 
 const UserInput = () => {
+  const [userInput, setUserInput] = useState({
+    "current-savings": 10000,
+    "yearly-contribution": 1200,
+    "expected-return": 7,
+    duration: 10,
+  });
   const resetHandler = () => {};
 
   const submitHandler = (event) => {
     event.preventDefault();
   };
 
-  const inputChangeHandler = (input, value) => {};
+  const inputChangeHandler = (input, value) => {
+    setUserInput((prevInput) => {
+      return {
+        ...prevInput,
+        [input]: value,
+      };
+    });
+  };
   return (
     <form onSubmit={submitHandler} className="form">
       <div className="input-group">
