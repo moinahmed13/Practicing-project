@@ -1,14 +1,19 @@
 import { useState } from "react";
 import "./UserInput.css";
 
+const initialUserInput = {
+  "current-savings": 10000,
+  "yearly-contribution": 1200,
+  "expected-return": 7,
+  duration: 10,
+};
+
 const UserInput = () => {
-  const [userInput, setUserInput] = useState({
-    "current-savings": 10000,
-    "yearly-contribution": 1200,
-    "expected-return": 7,
-    duration: 10,
-  });
-  const resetHandler = () => {};
+  const [userInput, setUserInput] = useState(initialUserInput);
+
+  const resetHandler = () => {
+    setUserInput(initialUserInput);
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
